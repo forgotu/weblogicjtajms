@@ -21,7 +21,8 @@ import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/***本类的方法报括 对事务通用方法的实现 包括开启事务， 运行实现子类的抽象方法，运行事务体提交或者回滚 ，，，本类同时提供对资源的关闭，子类只需调用close方法，将需要关闭的资源无序性的传入
+ * 本类用法，继承本类，如在jms.properties 文件中没有配置远程jndi的url,和jndi树根节点的名字，则需要通过子类的有参构造，传入本类，来开启事务**/
 public abstract class JMSIUtilAccessor implements FounderTransation {
 	protected final static Logger logger = LoggerFactory.getLogger(JMSIUtilAccessor.class);
 	public final static String SESSION = "session";
